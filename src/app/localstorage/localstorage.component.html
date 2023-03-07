@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>localstorage</h1>
+  <div class="row">
+    <div class="col-lg-2">
+      Date
+      <input type="date" class="form-control" [(ngModel)]="tdate">
+    </div>
+    <div class="col-lg-2">
+      Time
+      <input type="time" class="form-control" [(ngModel)]="ttime">
+    </div>
+    <div class="col-lg-8">
+      Task
+      <input type="text" class="form-control" [(ngModel)]="ttask">
+    </div>
+    <div class="col-lg-2">
+    <button class="btn btn-primary m-3" type="submit" (click)="submit()" [disabled]="invalid">save</button>
+  </div>
+</div>
+</div>
+<div class="container">
+  <table class="table table-success table-striped borderd">
+    <tr>
+      <th>Sr.No</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Task</th>
+      <th>Delete</th>
+      <th>Edit</th>
+    </tr>
+    <tr *ngFor="let task of tasks, let i = index">
+      <td>{{i+1}}</td>
+      <td>{{task.date}}</td>
+      <td>{{task.Time}}</td>
+      <td>{{task.Task}}</td>
+      <td>
+        <button class="btn btn-red" type="submit" (click)="deleteUser(i)">Delete</button></td>
+      <td>
+        <button type="reset" (click)="update(i)">Edit</button>
+      </td>
+    </tr>
+
+
+  </table>
+</div>
